@@ -20,3 +20,22 @@ variable "instance_keypair" {
   default     = "awslearning"
 }
 
+# AWS EC2 Instance Type - List
+variable "instance_type_list" {
+  description = "EC2 Instance Type"
+  type = list(string)
+  default = ["t2.micro", "t2.small"]
+}
+# instance type of list count starts from 0,1,2 ,3  so on
+# AWS EC2 Instance Type - Map
+variable "instance_type_map" {
+  description = "EC2 Instance Type"
+  type = map(string)
+  default = {
+    "dev" = "t2.micro"
+    "qa"  = "t2.small"
+    "prod" = "t2.medium"
+  }
+}
+
+
